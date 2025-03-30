@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ELM327 OBD-II Monitor
 
-## Getting Started
+A Python application for monitoring vehicle data using an ELM327 OBD-II adapter with a PyQt5 GUI.
 
-First, run the development server:
+## Features
+
+- Connect to ELM327 adapters (WiFi or Bluetooth)
+- Monitor real-time vehicle metrics
+- Read and clear diagnostic trouble codes (DTCs)
+- Save metrics to CSV files
+- User-friendly interface
+
+## Installation
+
+### Prerequisites
+
+- Python 3.6+
+- pip package manager
+
+### Windows
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Install dependencies
+pip install -r requirements.txt
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Linux/MacOS
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Make the install script executable
+chmod +x install.sh
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Run the installation script
+./install.sh
+```
 
-## Learn More
+## Usage
 
-To learn more about Next.js, take a look at the following resources:
+Run the application with:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+python main.py
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Connection
 
-## Deploy on Vercel
+1. Enter your ELM327 adapter's IP and port (e.g., `192.168.0.10:35000`) or leave blank for auto-detection
+2. Click "Connect"
+3. Once connected, real-time metrics will display on the interface
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Read DTCs**: Read diagnostic trouble codes from the vehicle
+- **Clear DTCs**: Clear diagnostic trouble codes (use with caution)
+- **Save Metrics**: Export current metrics to a CSV file
+
+## Supported OBD-II Commands
+
+The application supports standard OBD-II PIDs including:
+
+- RPM
+- Vehicle Speed
+- Coolant Temperature
+- Engine Load
+- Fuel Level
+- Throttle Position
+- And more, depending on vehicle support 

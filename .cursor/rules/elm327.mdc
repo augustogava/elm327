@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Okay, here is a Python code example using the python-obd library to connect to a Wi-Fi ELM327 adapter and read some basic car data. This library makes the process much simpler than handling the raw network communication yourself.
+
+add prompt for input, error threaating, metrics to be saved and create a gui using PyQt5.QtGui, to do the  stuff, like connect, get status, show bassic inf
